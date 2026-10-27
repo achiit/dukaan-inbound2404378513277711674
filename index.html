@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>राम वृक्ष टी स्टॉल ☕</title>
+<style>
+:root {
+ --site-primary:#123A70; --site-on-primary:#FFFFFF;
+ --site-secondary:#11C5D9; --site-on-secondary:#062B3B;
+ --site-background:#07182C; --site-on-background:#F4F8FC;
+ --site-font-body: "Noto Sans Devanagari", "Nirmala UI", system-ui, sans-serif;
+ --site-font-heading: "Noto Sans Devanagari", "Nirmala UI", system-ui, sans-serif;
+ --site-heading-scale:1; --site-spacing-scale:1; --site-radius-scale:1;
+ --site-decoration-opacity:1;
+}
+*{box-sizing:border-box}
+body{margin:0;background:light-dark(#f4f8fc,#07182c);color:light-dark(#10233b,#f4f8fc);font-family:var(--site-font-body);line-height:1.6}
+#app{background-color:var(--site-background);color:var(--site-on-background);border-radius:0;min-height:100vh;overflow:hidden}
+a{color:inherit;text-decoration:none}
+header{background:var(--site-primary);color:var(--site-on-primary);padding:calc(18px * var(--site-spacing-scale)) max(5vw,20px);display:flex;align-items:center;justify-content:space-between;gap:18px;border-bottom:1px solid #ffffff22}
+.brand{font-weight:900;font-size:1.15rem;letter-spacing:.2px}.brand span{color:var(--site-secondary)}
+nav{display:flex;gap:20px;font-size:.92rem;flex-wrap:wrap}
+.hero{padding:clamp(38px,8vw,90px) max(5vw,20px);background:radial-gradient(ellipse at 85% 10%,#11c5d933,transparent 35%),linear-gradient(135deg,#123a70,#07182c 70%);display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:40px}
+.eyebrow{color:var(--site-secondary);font-weight:800;letter-spacing:1.5px;font-size:.78rem;text-transform:uppercase}
+h1{font-size:calc(clamp(2.5rem,6vw,4.7rem) * var(--site-heading-scale));line-height:1.12;margin:12px 0 18px;letter-spacing:-1.5px}
+h1 em{font-style:normal;color:var(--site-secondary)}
+.hero p{color:#c8d7e8;max-width:580px;font-size:1.08rem}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid #ffffff30;border-radius:calc(14px * var(--site-radius-scale));padding:12px 18px;font-weight:800;cursor:pointer;font:inherit;font-weight:800}
+.primary{background:var(--site-secondary);color:var(--site-on-secondary);border-color:var(--site-secondary)}
+.secondary{background:#ffffff0d;color:white}
+.cup-art{min-height:270px;border:1px solid #ffffff22;border-radius:calc(30px * var(--site-radius-scale));background:linear-gradient(145deg,#ffffff12,#ffffff03);display:grid;place-items:center;position:relative;overflow:hidden}
+.cup{font-size:clamp(7rem,18vw,12rem);filter:drop-shadow(0 20px 22px #0008);position:relative;z-index:1}
+.steam{position:absolute;top:35px;font-size:3rem;color:var(--site-secondary);opacity:.65;letter-spacing:18px}
+.floating{position:absolute;bottom:22px;right:20px;background:#07182cdd;border:1px solid #ffffff22;padding:10px 14px;border-radius:14px;font-size:.85rem}
+section{padding:64px max(5vw,20px)}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:25px}
+h2{font-size:calc(clamp(1.8rem,4vw,2.7rem) * var(--site-heading-scale));line-height:1.2;margin:8px 0}
+.muted{color:#a9bbcf}
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.menu-card{padding:23px;border-radius:calc(20px * var(--site-radius-scale));background:#102944;border:1px solid #ffffff13;transition:transform .2s,border-color .2s}
+.menu-card:hover{transform:translateY(-4px);border-color:var(--site-secondary)}
+.menu-icon{font-size:2rem}.menu-card h3{margin:12px 0 5px}.menu-card p{margin:0;color:#a9bbcf;font-size:.93rem}
+.features{background:#0b2038}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.feature{border:1px solid #ffffff1c;border-radius:18px;padding:20px;background:#ffffff06}
+.feature b{display:block;margin:8px 0}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.review{border:1px solid #ffffff1c;border-radius:18px;padding:22px;background:#102944}
+.stars{color:#ffd166;letter-spacing:2px}
+.gallery{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:14px}
+.gallery-tile{min-height:150px;border-radius:20px;padding:22px;display:flex;flex-direction:column;justify-content:end;background:linear-gradient(145deg,#164b79,#0c223a);border:1px solid #ffffff1a}
+.gallery-tile:first-child{min-height:230px;grid-row:span 2;background:radial-gradient(circle at 70% 20%,#11c5d944,transparent 40%),linear-gradient(145deg,#164b79,#0c223a)}
+.gallery-tile span{font-size:2.4rem}
+.location{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:stretch}
+.location-card{padding:26px;background:#102944;border:1px solid #ffffff16;border-radius:22px}
+.map{min-height:280px;background:linear-gradient(135deg,#133a59,#0a2035);border-radius:22px;display:grid;place-items:center;text-align:center;padding:25px;border:1px solid #ffffff16}
+.map-pin{font-size:3.5rem}
+.contact-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+footer{padding:30px max(5vw,20px);background:#041020;border-top:1px solid #ffffff15;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:#9eb2c8;font-size:.9rem}
+.admin{background:#102944;border:1px solid #ffffff22;border-radius:22px;padding:24px;margin-top:25px}
+.admin summary{cursor:pointer;font-weight:800;color:var(--site-secondary)}
+.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+label{display:block;font-size:.9rem;margin-bottom:5px}
+input,textarea{width:100%;padding:11px 12px;border:1px solid #ffffff2b;border-radius:10px;background:#07182c;color:white;font:inherit}
+textarea{min-height:90px}
+.admin-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.notice{color:var(--site-secondary);font-size:.9rem;margin-top:10px}
+@media(max-width:760px){header{align-items:flex-start;flex-direction:column}nav{gap:13px}.hero{grid-template-columns:1fr}.cup-art{min-height:220px}.menu-grid,.feature-grid,.review-grid{grid-template-columns:1fr 1fr}.location{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.gallery-tile:first-child{grid-row:auto;min-height:170px}.section-head{align-items:flex-start;flex-direction:column}}
+@media(max-width:470px){.menu-grid,.feature-grid,.review-grid{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.gallery-tile{min-height:130px;padding:16px}section{padding-top:45px;padding-bottom:45px}.admin-grid{grid-template-columns:1fr}nav{font-size:.84rem}}
+</style>
+</head>
+<body>
+<div id="app">
+<header><a class="brand" href="#home">☕ <span>राम वृक्ष</span> टी स्टॉल</a><nav><a href="#menu">मेन्यू</a><a href="#gallery">फोटो गैलरी</a><a href="#reviews">समीक्षाएँ</a><a href="#location">लोकेशन</a></nav></header>
+<main>
+<section class="hero" id="home">
+<div><div class="eyebrow">आपकी सुबह की चाय, हर दिन</div><h1>एक कप चाय,<br><em>दिल से तैयार।</em></h1><p>मसाला चाय से लेकर कुल्हड़ वाली चाय तक — ताज़गी, स्वाद और अपनापन, सब एक ही जगह। दुल्हीपुर में आपका स्वागत है!</p><div class="actions"><a class="btn primary" href="tel:8960836422">📞 अभी कॉल करें</a><a class="btn secondary" href="https://wa.me/919648453698" target="_blank" rel="noopener">◉ WhatsApp करें</a></div><p class="muted">📍 पुलिस चौकी के पास, दुल्हीपुर, मुगलसराय</p></div>
+<div class="cup-art" aria-label="चाय का चित्र"><div class="steam">〰 〰</div><div class="cup">☕</div><div class="floating">♨ ताज़ा चाय · रोज़ाना</div></div>
+</section>
+<section id="menu"><div class="section-head"><div><div class="eyebrow">हमारे स्वाद</div><h2>मेन्यू में क्या है?</h2><div class="muted">हर कप में गर्माहट और स्वाद।</div></div><span class="muted">☕ Tea • Coffee • Snacks</span></div><div class="menu-grid" id="menuGrid">
+<article class="menu-card"><div class="menu-icon">🌶️</div><h3>मसाला चाय</h3><p>मसालों की खुशबू और भरपूर स्वाद।</p></article>
+<article class="menu-card"><div class="menu-icon">🫚</div><h3>अदरक-इलायची चाय</h3><p>अदरक की ताज़गी, इलायची की महक।</p></article>
+<article class="menu-card"><div class="menu-icon">🏺</div><h3>कुल्हड़ वाली चाय</h3><p>मिट्टी की सोंधी खुशबू के साथ।</p></article>
+<article class="menu-card"><div class="menu-icon">☕</div><h3>कॉफी</h3><p>दिन को ऊर्जा देने वाला गर्म कप।</p></article>
+<article class="menu-card"><div class="menu-icon">🥨</div><h3>हल्के नाश्ते</h3><p>चाय के साथ कुछ हल्का और स्वादिष्ट।</p></article>
+<article class="menu-card"><div class="menu-icon">✨</div><h3>चाय मसाला</h3><p>घर ले जाने के लिए खुशबूदार मसाला।</p></article>
+</div></section>
+<section class="features" id="gallery"><div class="section-head"><div><div class="eyebrow">स्टॉल की झलक</div><h2>फोटो गैलरी</h2><div class="muted">अपनी दुकान की असली तस्वीरें एडमिन पैनल से जोड़ें।</div></div></div><div class="gallery"><div class="gallery-tile"><span>☕</span><b>चाय का असली स्वाद</b><small>राम वृक्ष टी स्टॉल</small></div><div class="gallery-tile"><span>🏺</span><b>कुल्हड़ वाली चाय</b></div><div class="gallery-tile"><span>🫖</span><b>ताज़ा बनी चाय</b></div><div class="gallery-tile"><span>🥨</span><b>चाय के साथ नाश्ता</b></div><div class="gallery-tile"><span>🌿</span><b>स्वाद और अपनापन</b></div></div></section>
+<section id="reviews"><div class="section-head"><div><div class="eyebrow">आपकी राय मायने रखती है</div><h2>ग्राहक समीक्षाएँ</h2><div class="muted">अपना अनुभव साझा करें और दूसरों की मदद करें।</div></div><a class="btn secondary" href="https://www.google.com/maps/search/?api=1&query=Ram+Vriksh+Tea+Stall+Dulhipur+Mughalsarai" target="_blank" rel="noopener">⭐ समीक्षा दें</a></div><div class="review-grid"><article class="review"><div class="stars">★★★★★</div><p>“अपनी समीक्षा यहाँ लिखें — आपकी राय हमारे लिए महत्वपूर्ण है।”</p><b>— ग्राहक समीक्षा</b></article><article class="review"><div class="stars">★★★★★</div><p>“चाय और नाश्ते के बारे में अपना अनुभव साझा करें।”</p><b>— ग्राहक समीक्षा</b></article><article class="review"><div class="stars">★★★★★</div><p>“आपका सुझाव हमें और बेहतर बनने में मदद करता है।”</p><b>— ग्राहक समीक्षा</b></article></div></section>
+<section class="features" id="location"><div class="section-head"><div><div class="eyebrow">हमसे मिलें</div><h2>दुकान की लोकेशन</h2></div></div><div class="location"><div class="location-card"><h3>राम वृक्ष टी स्टॉल ☕</h3><p>👤 <b>मालिक:</b> राम वृक्ष पटेल</p><p>📍 पुलिस चौकी के पास, रामकृष्ण आई हॉस्पिटल के नज़दीक, दुल्हीपुर, मुगलसराय, चंदौली, उत्तर प्रदेश – 232101</p><p>🕑 <b>समय:</b> प्रतिदिन सुबह 2 बजे से 10 बजे तक</p><p>📞 <a href="tel:8960836422">8960836422</a> · <a href="tel:7275700816">7275700816</a></p><p>◉ WhatsApp: <a href="https://wa.me/919648453698" target="_blank" rel="noopener">9648453698</a></p><div class="contact-row"><a class="btn primary" href="tel:8960836422">📞 कॉल करें</a><a class="btn secondary" href="https://wa.me/919648453698" target="_blank" rel="noopener">WhatsApp</a></div></div><a class="map" href="https://www.google.com/maps/search/?api=1&query=Ram+Vriksh+Tea+Stall%2C+Dulhipur%2C+Mughalsarai%2C+Chandauli%2C+Uttar+Pradesh+232101" target="_blank" rel="noopener"><div><div class="map-pin">📍</div><h3>Google Maps पर रास्ता देखें</h3><p class="muted">दुकान तक पहुँचने के लिए टैप करें</p><span class="btn primary">मैप खोलें ↗</span></div></a></div>
+<details class="admin" id="admin"><summary>🔐 एडमिन पैनल — दुकान की जानकारी बदलें</summary><p class="muted">यह डेमो एडिटर इस ब्राउज़र में पेज का टेक्स्ट बदलता है। सुरक्षित लॉगिन और सभी डिवाइस पर बदलाव सेव करने के लिए बैकएंड/डेटाबेस जोड़ना होगा।</p><div class="admin-grid"><div><label for="shopName">दुकान का नाम</label><input id="shopName" value="राम वृक्ष टी स्टॉल"></div><div><label for="owner">मालिक</label><input id="owner" value="राम वृक्ष पटेल"></div><div><label for="phone">कॉल नंबर 1</label><input id="phone" value="8960836422"></div><div><label for="wa">WhatsApp नंबर</label><input id="wa" value="9648453698"></div><div><label for="hours">खुलने का समय</label><input id="hours" value="प्रतिदिन सुबह 2 बजे से 10 बजे तक"></div><div><label for="address">पता</label><textarea id="address">पुलिस चौकी के पास, रामकृष्ण आई हॉस्पिटल के नज़दीक, दुल्हीपुर, मुगलसराय, चंदौली, उत्तर प्रदेश – 232101</textarea></div><div style="grid-column:1/-1"><label for="menuEdit">मेन्यू (हर आइटम नई लाइन पर)</label><textarea id="menuEdit">मसाला चाय
+अदरक-इलायची चाय
+कुल्हड़ वाली चाय
+कॉफी
+हल्के नाश्ते
+चाय मसाला</textarea></div></div><div class="admin-actions"><button class="btn primary" id="apply">पेज पर बदलाव दिखाएँ</button><button class="btn secondary" id="reset">डेमो रीसेट करें</button></div><div class="notice" id="adminNotice" role="status"></div></details>
+</section>
+</main>
+<footer><div>☕ <b>राम वृक्ष टी स्टॉल</b><br>चाय में स्वाद, हर मुलाक़ात में अपनापन।</div><div>© <span id="year"></span> राम वृक्ष टी स्टॉल · दुल्हीपुर, उत्तर प्रदेश</div></footer>
+</div>
+<script>
+const defaults={name:"राम वृक्ष टी स्टॉल",owner:"राम वृक्ष पटेल",phone:"8960836422",wa:"9648453698",hours:"प्रतिदिन सुबह 2 बजे से 10 बजे तक",address:"पुलिस चौकी के पास, रामकृष्ण आई हॉस्पिटल के नज़दीक, दुल्हीपुर, मुगलसराय, चंदौली, उत्तर प्रदेश – 232101",menu:["मसाला चाय","अदरक-इलायची चाय","कुल्हड़ वाली चाय","कॉफी","हल्के नाश्ते","चाय मसाला"]};
+document.getElementById("year").textContent=new Date().getFullYear();
+document.getElementById("apply").addEventListener("click",()=>{
+const v={name:document.getElementById("shopName").value.trim(),owner:document.getElementById("owner").value.trim(),phone:document.getElementById("phone").value.trim(),wa:document.getElementById("wa").value.trim(),hours:document.getElementById("hours").value.trim(),address:document.getElementById("address").value.trim(),menu:document.getElementById("menuEdit").value.split("\n").map(s=>s.trim()).filter(Boolean)};
+if(!v.name||!v.phone){document.getElementById("adminNotice").textContent="दुकान का नाम और कॉल नंबर भरना ज़रूरी है।";return}
+document.querySelectorAll(".brand span").forEach(e=>e.textContent=v.name);
+document.querySelectorAll(".location-card h3").forEach(e=>e.textContent=v.name+" ☕");
+const ps=document.querySelectorAll(".location-card p");
+ps[0].innerHTML="👤 <b>मालिक:</b> "+esc(v.owner);ps[1].textContent="📍 "+v.address;ps[2].innerHTML="🕑 <b>समय:</b> "+esc(v.hours);ps[3].innerHTML='📞 <a href="tel:'+esc(v.phone)+'">'+esc(v.phone)+'</a> · <a href="tel:7275700816">7275700816</a>';ps[4].innerHTML='◉ WhatsApp: <a href="https://wa.me/91'+esc(v.wa.replace(/\D/g,""))+'">'+esc(v.wa)+'</a>';
+document.querySelectorAll('a[href="tel:8960836422"]').forEach(a=>a.href="tel:"+v.phone);
+document.querySelectorAll('a[href="https://wa.me/919648453698"]').forEach(a=>a.href="https://wa.me/91"+v.wa.replace(/\D/g,""));
+document.getElementById("menuGrid").innerHTML=v.menu.map((m,i)=>'<article class="menu-card"><div class="menu-icon">'+["🌶️","🫚","🏺","☕","🥨","✨"][i%6]+'</div><h3>'+esc(m)+'</h3><p>राम वृक्ष टी स्टॉल की खास पेशकश।</p></article>').join("");
+document.getElementById("adminNotice").textContent="बदलाव इस पेज पर दिखाए गए हैं। स्थायी रूप से सेव नहीं हुए हैं।";
+});
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+document.getElementById("reset").addEventListener("click",()=>location.reload());
+</script>
+</body></html>
